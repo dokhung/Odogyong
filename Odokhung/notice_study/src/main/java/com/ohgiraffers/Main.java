@@ -56,7 +56,6 @@ public class Main {
             System.out.println("------------------");
             System.out.println(inNotice);
             System.out.println("------------------");
-            System.out.println();
         }
     }
 
