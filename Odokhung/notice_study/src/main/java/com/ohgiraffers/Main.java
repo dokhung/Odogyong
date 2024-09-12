@@ -70,7 +70,7 @@ public class Main {
         }
 
         System.out.println("------------------");
-        System.out.println("작성 하시겠습니까? 현재" + inNotice);
+        System.out.println("작성 하시겠습니까?");
         if (checkNotice == false){
             System.out.println("입력할 공지사항을 입력하시오");
             System.out.println("------------------");
