@@ -4,13 +4,9 @@ import java.util.Scanner;
 
 public class Main {
     static boolean checkNotice = false;
-    static String inNotice;
-
-
-
-
-
+    static String inputNotice = "";
     public static void main(String[] args) {
+        String inputNotice;
         while(true){
             System.out.println("0. 목록보기");
             // 2. 공지사항 등록 기능
@@ -44,7 +40,7 @@ public class Main {
     // 메뉴 리스트 표현
     public static void NoticeList(){
         System.out.println("Notice List");
-        if (checkNotice == false){
+        if (!checkNotice){
             System.out.println();
             System.out.println("------------------");
             System.out.println("현재 아무것도 없습니다.");
@@ -54,28 +50,22 @@ public class Main {
         else {
             System.out.println();
             System.out.println("------------------");
-            System.out.println(inNotice);
+            System.out.println("공지사항 내용");
+            System.out.println(inputNotice);
             System.out.println("------------------");
         }
     }
 
     public static void NoticeInsert(){
-
+        // 1. 내용이 있는지 없는지 확인을 먼저함
         System.out.println("Notice Insert");
-        if (checkNotice == false){
-            inNotice = "내용이 없습니다.";
-        }
-        else {
-            inNotice = "내용이 있습니다.";
-        }
-
         System.out.println("------------------");
         System.out.println("작성 하시겠습니까?");
-        if (checkNotice == false){
+        if (!checkNotice){
             System.out.println("입력할 공지사항을 입력하시오");
             System.out.println("------------------");
             Scanner stringScanner = new Scanner(System.in);
-            String inputNotice = stringScanner.nextLine();
+            inputNotice = stringScanner.nextLine();
             if (inputNotice != null) {
                 checkNotice = true;
             }
@@ -90,7 +80,21 @@ public class Main {
     }
 
     public static void NoticeUpdate(){
+        // 내용이 있는지 없는지 확인이 먼저 필요하다.
         System.out.println("Notice Update");
+        if (!checkNotice){
+            System.out.println("수정할 공지사항의 내용이 없습니다.");
+        }
+        else {
+            System.out.println("----------------");
+            System.out.println("수정할 내용을 입력하여 주십시오 =.");
+            System.out.println("----------------");
+            Scanner stringScanner = new Scanner(System.in);
+            inputNotice = stringScanner.nextLine();
+            System.out.println("수정이 완료 되었습니다.");
+            System.out.println("수정된 내용은 다음과 같습니다.");
+            System.out.println(inputNotice);
+        }
         System.out.println();
         System.out.println();
         System.out.println();
