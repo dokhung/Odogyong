@@ -1,12 +1,11 @@
 package com.ohgiraffers.run;
 
-import com.ohgiraffers.view.View;
-
-import java.util.Scanner;
+import com.ohgiraffers.controller.Controller;
 
 public class Run {
     public static void main(String[] args) {
-        View view = new View();
-        view.menu();
+        // Controller 객체를 생성
+        Controller cr = new Controller();
+        cr.view.menu();
     }
 }
